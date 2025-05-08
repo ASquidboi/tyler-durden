@@ -19,9 +19,18 @@ def is_different(f1, f2, threshold=0.90):
     score, _ = ssim(g1, g2, full=True)
     return score < threshold
 
+def get_next_build_dir(base_name, root="frames"):
+    os.makedirs(root, exist_ok=True)
+    i = 1
+    while True:
+        dir_name = os.path.join(root, f"{base_name}_{i:03}")
+        if not os.path.exists(dir_name):
+            return dir_name
+        i += 1
+
 def extract_frames(gif_path, threshold=0.30, out_root="frames"):
-    timestamp = time.strftime(gif_path + "")
-    out_dir = os.path.join(out_root, f"run_{timestamp}")
+    base_name = os.path.splitext(os.path.basename(gif_path))[0]
+    out_dir = get_next_build_dir(base_name, out_root)
     os.makedirs(out_dir, exist_ok=True)
 
     frames = load_frames(gif_path)
@@ -37,7 +46,7 @@ def extract_frames(gif_path, threshold=0.30, out_root="frames"):
     return indices
 
 # Example usage
-gif_path = input("Path to GIF?")
+gif_path = input("Filepath to gif?")
 frame_indices = extract_frames(gif_path)
 print("Distinct frame indices:", frame_indices)
 
