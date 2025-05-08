@@ -58,7 +58,7 @@ def extract_frames(gif_path, threshold=0.30, out_root="frames"):
     return saved_files
 
 # Example usage
-gif_path = input("Path to GIF?")
+gif_path = os.path.expanduser(input("Path to GIF? "))
 saved = extract_frames(gif_path)
 print("Saved frame files:")
 for path in saved:
