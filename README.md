@@ -13,7 +13,3 @@ Requirements:
 pip install pillow numpy scikit-image opencv-python
 ```
 Run code and enter path to the GIF you want to scan.
-<<<<<<< HEAD
-
-=======
->>>>>>> 0fdcce295116829b54a88475ba638d269a54eeb9
