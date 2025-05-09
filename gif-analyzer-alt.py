@@ -1,3 +1,8 @@
+#Alternate version of the GIF analyzer.
+#The other one uses Pillow which appears to not properly work with MacOS.
+#This version uses imageio which has appeared to work better but is still under development.
+#
+#
 import imageio.v2 as imageio
 import numpy as np
 import os
