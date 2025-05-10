@@ -10,6 +10,6 @@ From testing, it's been found this program is most effective on linux (specifica
 Requirements:
 
 ```
-pip install pillow numpy scikit-image opencv-python
+pip install pillow numpy scikit-image opencv-python imageio
 ```
 Run code and enter path to the GIF you want to scan.
